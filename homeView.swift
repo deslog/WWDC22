@@ -17,15 +17,21 @@ struct homeView: View {
     
     var body: some View {
         ZStack {
+            VStack {
+                Text("step.1 Find three answer!🐻‍❄️")
+                    .bold()
+                .font(.system(size: 30))
+                
+                Image("homeView")
+                    .resizable()
+                    .frame(width: 342, height: 740)
+            }
             
-            Image("homeMain")
-                .resizable()
-                .frame(width: 342, height: 740)
             
             HStack {
                 Button(action: {
                     withAnimation(.easeIn) {
-                        mailBedge.toggle()
+                        mailBedge = false
                     }
                 }, label: {
                     Text("999").bold()
@@ -39,12 +45,12 @@ struct homeView: View {
                 .background(mailBedge ? Color.red : Color.gray)
             .clipShape(RoundedRectangle(cornerRadius: 40))
             }
-            .offset(x: -85, y:-130)
+            .offset(x: -85, y:-100)
             
             HStack {
                 Button(action: {
                     withAnimation(.easeIn) {
-                        musicBedge.toggle()
+                        musicBedge = false
                     }
                 }, label: {
                     Text("!").bold()
@@ -58,12 +64,12 @@ struct homeView: View {
                 .background(musicBedge ? Color.red : Color.gray)
             .clipShape(RoundedRectangle(cornerRadius: 40))
             }
-            .offset(x: 125, y: 275)
+            .offset(x: 125, y: 300)
             
             HStack {
                 Button(action: {
                     withAnimation(.easeIn) {
-                        disBedge.toggle()
+                        disBedge = false
                     }
                 }, label: {
                     Text("!").bold()
@@ -77,7 +83,11 @@ struct homeView: View {
                 .background(disBedge ? Color.red : Color.gray)
             .clipShape(RoundedRectangle(cornerRadius: 40))
             }
-            .offset(x: 125, y: -130)
+            .offset(x: 125, y: -100)
+        }
+        
+        ZStack {
+            // 말풍선 쌓기
         }
         
     }
