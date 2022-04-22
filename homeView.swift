@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  CO2-FootPrint
-//
-//  Created by 이지수 on 2022/04/19.
-//  기본 사이즈 428 * 926
-
 import SwiftUI
 
 struct homeView: View {
@@ -12,9 +5,6 @@ struct homeView: View {
     @State var disBedge = true
     @State var musicBedge = true
     @State var n = 0
-    
-    let screenWidth = 390
-    let screenHeight = 844
     
     var body: some View {
         NavigationView {
@@ -25,7 +15,6 @@ struct homeView: View {
                                 Text("Find hidden CO2!🐻‍❄️ (\(n)/3)")
                                     .bold()
                                     .font(.system(size: 30))
-                                    .frame(width: .infinity, height: .infinity, alignment: .center)
                                 
                                 Image("homeView")
                                     .resizable()
