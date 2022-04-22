@@ -16,7 +16,7 @@ struct mainView: View {
                     VStack {
                         Text("📱DIGITAL DIET🌳")
                             .bold()
-                            .font(.system(size: 40))
+                            .font(.system(size: 50))
                             .padding(10)
                         Text("Downsize your Digital Footprint.")
                             .bold()
@@ -43,7 +43,7 @@ struct mainView: View {
                                 .padding(10)
                                 
                                 NavigationLink(destination: homeView()) {
-                                    Text("Game Start")
+                                    Text("Game Start 🎉")
                                         .font(.system(size: 30))
                                         .frame(width: 320, height: 70, alignment: .center)
                                         .background(Color.green)
@@ -55,7 +55,7 @@ struct mainView: View {
                                 
                             }
                             NavigationLink(destination: whyCarbonView()) {
-                                Text("Why shold we practice Net-Zero?")
+                                Text("Why should we practice Net-Zero?")
                                     .font(.system(size: 30))
                                     .underline()
                                     .frame(width: 480, height: 70, alignment: .center)
