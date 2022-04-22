@@ -17,6 +17,7 @@ struct mailView: View {
     let screenHeight = 844
     
     var body: some View {
+        
         VStack {
             ZStack {
                 VStack {
@@ -125,11 +126,18 @@ struct mailView: View {
                 }
                 .offset(x: 580, y: -350)
                 
-
-                
-            } // zstack 끝
+            }
+            NavigationLink(destination: instaView()) {
+                Text("Next Step 👉🏻")
+                    .font(.system(size: 30))
+                    .frame(width: 320, height: 70, alignment: .center)
+                    .background(Color.green)
+                    .foregroundColor(Color.white)
+                    .cornerRadius(30)
+            }
+            .navigationBarHidden(true)
             
-        } //가장 상단 vstack 끝
+        }
         
     }
 }
