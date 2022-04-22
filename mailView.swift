@@ -11,6 +11,7 @@ struct mailView: View {
     @State var inbox = true
     @State var junkAndTrash = true
     @State var writemail = true
+    @State var n = 0
     
     let screenWidth = 390
     let screenHeight = 844
@@ -20,7 +21,7 @@ struct mailView: View {
         VStack {
             ZStack {
                 VStack {
-                    Text("Find 4 answers!🐨")
+                    Text("Find hidden CO2!🐨 (\(n)/3)")
                         .bold()
                         .font(.system(size: 30))
                     
@@ -33,6 +34,9 @@ struct mailView: View {
                     Button(action: {
                         withAnimation(.easeIn) {
                             inbox = false
+                            if n < 3{
+                                n += 1
+                            }
                         }
                     }, label: {
                         Text("999").bold()
@@ -62,6 +66,9 @@ struct mailView: View {
                     Button(action: {
                         withAnimation(.easeIn) {
                             junkAndTrash = false
+                            if n < 3 && junkAndTrash == true {
+                                n += 1
+                            }
                         }
                     }, label: {
                         Text("23").bold()
@@ -80,6 +87,9 @@ struct mailView: View {
                     Button(action: {
                         withAnimation(.easeIn) {
                             junkAndTrash = false
+                            if n < 3 && junkAndTrash == true {
+                                n += 1
+                            }
                         }
                     }, label: {
                         Text("498").bold()
@@ -98,6 +108,9 @@ struct mailView: View {
                     Button(action: {
                         withAnimation(.easeIn) {
                             writemail = false
+                            if n < 3{
+                                n += 1
+                            }
                         }
                     }, label: {
                         Image(systemName: "square.and.pencil")
@@ -117,7 +130,6 @@ struct mailView: View {
                             .padding(.all, 20)
                             .foregroundColor(Color.white)
                             .background(Color.green)
-                            .frame(width: 210)
                             .frame(width: inbox ? 0 : 210)
                     }
                     .offset(x: 580, y: -70)
