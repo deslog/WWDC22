@@ -24,11 +24,18 @@ struct mainView: View {
                 }
                 .padding(EdgeInsets(top: 30, leading: 20, bottom: 30, trailing: 20))
                 
+                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut semper quam. Phasellus non mauris sem. Donec sed fermentum eros. Donec pretium nec turpis a semper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut semper quam.\n Phasellus non mauris sem. Donec sed fermentum eros. Donec pretium nec turpis a semper.Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Suspendisse ut semper quam. Phasellus non mauris sem. Donec sed fermentum eros. Donec pretium nec turpis a semper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut semper quam.\n Phasellus non mauris sem. Donec sed fermentum eros. Donec pretium nec turpis a semper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut semper quam. Phasellus non mauris sem. \n\nDonec sed fermentum eros. Donec pretium nec turpis a semper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut semper quam. Phasellus non mauris sem. Donec sed fermentum eros. Donec pretium nec turpis a semper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut semper quam. Phasellus non mauris sem. Donec sed fermentum eros. Donec pretium nec turpis a semper.")
             }
-            .padding(EdgeInsets(top: 50, leading: 20, bottom: 50, trailing: 30))
+            
         }
+        .padding(EdgeInsets(top: 50, leading: 20, bottom: 50, trailing: 30))
+        
+        // navigationLink 여기다가 넣어야하나?
+        
     }
+    
 }
+
 
 
 struct mainView_Previews: PreviewProvider {
