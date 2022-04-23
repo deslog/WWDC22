@@ -11,6 +11,7 @@ struct instaView: View {
     @State var useComputer = true
     @State var n = 0
     @State private var alertActive = false
+    @State private var hintActive = false
     @Binding var firstNaviLinkActive: Bool
     
     let screenWidth = 390
@@ -59,61 +60,72 @@ struct instaView: View {
                                 }
                                 useComputer = false
                             }
-                            
                     }
-                    
-                    
-                    
-                    
                 }
                 .navigationBarHidden(true)
-                if n < 2 {
-                    Text(" Done 🎉 ")
+                
+                HStack {
+                    Text("HINT🔎")
                         .font(.system(size: 30))
                         .frame(width: 320, height: 70, alignment: .center)
-                        .background(Color.black.opacity(0.3))
-                        .foregroundColor(Color.white)
+                        .background(Color.white.opacity(0.3))
+                        .foregroundColor(Color.gray)
                         .cornerRadius(30)
                         .onTapGesture {
-                            self.alertActive = true
+                            self.hintActive = true
                         }
-                        .alert(isPresented: self.$alertActive){
-                            Alert(title: Text(""), message: Text("The game isn't over.\nYou need to find \(3-n) answers more."), dismissButton: .default(Text("OK")))}
-                } else {
-                    NavigationLink(destination: congratsView(firstNaviLinkActive: $firstNaviLinkActive)) {
+                        .alert(isPresented: self.$hintActive){
+                            Alert(title: Text("Hint"), message: Text("Look at the photos. They're using too much plastic. And computer monitors use a lot more energy than you think."), dismissButton: .default(Text("OK")))}
+                    
+                    if n < 2 {
                         Text(" Done 🎉 ")
                             .font(.system(size: 30))
                             .frame(width: 320, height: 70, alignment: .center)
-                            .background(Color.black)
+                            .background(Color.black.opacity(0.3))
                             .foregroundColor(Color.white)
                             .cornerRadius(30)
+                            .onTapGesture {
+                                self.alertActive = true
+                            }
+                            .alert(isPresented: self.$alertActive){
+                                Alert(title: Text(""), message: Text("The game isn't over.\nYou need to find \(3-n) answers more."), dismissButton: .default(Text("OK")))}
+                    } else {
+                        NavigationLink(destination: congratsView(firstNaviLinkActive: $firstNaviLinkActive)) {
+                            Text(" Done 🎉 ")
+                                .font(.system(size: 30))
+                                .frame(width: 320, height: 70, alignment: .center)
+                                .background(Color.black)
+                                .foregroundColor(Color.white)
+                                .cornerRadius(30)
+                        }
+                        .navigationBarHidden(true)
                     }
-                    .navigationBarHidden(true)
                 }
-                
             }
             
             ZStack {
-                ChatBubble(direction: .left) {
-                    Text("Delete emails you have already read! A huge amount of electricity is consumed to run a email data center.📨")
+                ChatBubble(direction: .right) {
+                    Text("Use less plastic! (Please use a tumbler) At least 10% of the climate crisis is due to consumption of plastics.🥤")
                         .font(.system(size: 20))
                     
                         .padding(.all, 20)
                         .foregroundColor(Color.white)
                         .background(Color.green)
-                        .frame(width: usePlastic ? 0 : 210)
+                        .frame(width: 210)
+                    //                        .frame(width: usePlastic ? 0 : 210)
                 }
-                .offset(x: 580, y: -250)
+                .offset(x: -580, y: -150)
                 
                 ChatBubble(direction: .left) {
-                    Text("Skip the simple greetings! For every single email you send, 4g of CO2 is produced. 🌍")
+                    Text("Use power saving mode! By lowering the monitor brightness to 70%, you can save 20% of the energy used.💻")
                         .font(.system(size: 20))
                         .padding(.all, 20)
                         .foregroundColor(Color.white)
                         .background(Color.green)
-                        .frame(width: useComputer ? 0 : 210)
+                        .frame(width: 210)
+                    //                        .frame(width: useComputer ? 0 : 210)
                 }
-                .offset(x: 580, y: 180)
+                .offset(x: 580, y: 100)
             }
         }
         

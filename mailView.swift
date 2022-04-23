@@ -6,6 +6,7 @@ struct mailView: View {
     @State var writemail = true
     @State var n = 0
     @State private var alertActive = false
+    @State private var hintActive = false
     @Binding var firstNaviLinkActive: Bool
     
     let screenWidth = 390
@@ -124,30 +125,44 @@ struct mailView: View {
                     .offset(x: 120, y:330)
                 }
                 .navigationBarHidden(true)
-                if n < 3 {
-                    Text("Next Step 👉🏻")
+                
+                HStack {
+                    Text("HINT🔎")
                         .font(.system(size: 30))
                         .frame(width: 320, height: 70, alignment: .center)
-                        .background(Color.black.opacity(0.3))
-                        .foregroundColor(Color.white)
+                        .background(Color.white.opacity(0.3))
+                        .foregroundColor(Color.gray)
                         .cornerRadius(30)
                         .onTapGesture {
-                            self.alertActive = true
+                            self.hintActive = true
                         }
-                        .alert(isPresented: self.$alertActive){
-                            Alert(title: Text(""), message: Text("The game isn't over.\nYou need to find \(3-n) answers more."), dismissButton: .default(Text("OK")))}
-                } else {
-                    NavigationLink(destination: instaView(firstNaviLinkActive: $firstNaviLinkActive)) {
+                        .alert(isPresented: self.$hintActive){
+                            Alert(title: Text("Hint"), message: Text("Focus on the numbers. There are too many emails piled up in the mailbox. And even when you write an email, CO2 is generated too!"), dismissButton: .default(Text("OK")))}
+                    
+                    if n < 3 {
                         Text("Next Step 👉🏻")
                             .font(.system(size: 30))
                             .frame(width: 320, height: 70, alignment: .center)
-                            .background(Color.black)
+                            .background(Color.black.opacity(0.3))
                             .foregroundColor(Color.white)
                             .cornerRadius(30)
+                            .onTapGesture {
+                                self.alertActive = true
+                            }
+                            .alert(isPresented: self.$alertActive){
+                                Alert(title: Text(""), message: Text("The game isn't over.\nYou need to find \(3-n) answers more."), dismissButton: .default(Text("OK")))}
+                    } else {
+                        NavigationLink(destination: instaView(firstNaviLinkActive: $firstNaviLinkActive)) {
+                            Text("Next Step 👉🏻")
+                                .font(.system(size: 30))
+                                .frame(width: 320, height: 70, alignment: .center)
+                                .background(Color.black)
+                                .foregroundColor(Color.white)
+                                .cornerRadius(30)
+                        }
+                        .navigationBarHidden(true)
                     }
-                    .navigationBarHidden(true)
                 }
-                
             }
             
             ZStack {
