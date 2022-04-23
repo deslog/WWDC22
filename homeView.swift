@@ -5,99 +5,116 @@ struct homeView: View {
     @State var disBedge = true
     @State var musicBedge = true
     @State var n = 0
+    @State private var alertActive = false
     
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
                     ZStack {
-                            VStack {
-                                Text("Find hidden CO2!🐻‍❄️ (\(n)/3)")
-                                    .bold()
-                                    .font(.system(size: 30))
-                                
-                                Image("homeView")
-                                    .resizable()
-                                    .frame(width: 342, height: 740)
-                            }
+                        VStack {
+                            Text("Find hidden CO2!🐻‍❄️ (\(n)/3)")
+                                .bold()
+                                .font(.system(size: 30))
                             
-                            
-                            HStack {
-                                Button(action: {
-                                    withAnimation(.easeIn) {
-                                        mailBedge = false
-                                        if n < 3 {
-                                            n += 1
-                                        }
+                            Image("homeView")
+                                .resizable()
+                                .frame(width: 342, height: 740)
+                        }
+                        
+                        
+                        HStack {
+                            Button(action: {
+                                withAnimation(.easeIn) {
+                                    mailBedge = false
+                                    if n < 3 {
+                                        n += 1
                                     }
-                                }, label: {
-                                    Text("999").bold()
-                                        .fontWeight(.semibold)
-                                        .font(.system(size: 15))
-                                        .frame(width: 50, height: 35, alignment: .center)
-                                        .foregroundColor(mailBedge ? Color.white : Color.black)
-                                })
-                                .padding()
-                                .frame(width: 40, height: 30, alignment: .center)
-                                .background(mailBedge ? Color.red : Color.gray)
-                                .clipShape(RoundedRectangle(cornerRadius: 40))
-                            }
-                            .offset(x: -85, y:-100)
-                            
-                            HStack {
-                                Button(action: {
-                                    withAnimation(.easeIn) {
-                                        musicBedge = false
-                                        if n < 3 {
-                                            n += 1
-                                        }
+                                }
+                            }, label: {
+                                Text("999").bold()
+                                    .fontWeight(.semibold)
+                                    .font(.system(size: 15))
+                                    .frame(width: 50, height: 35, alignment: .center)
+                                    .foregroundColor(mailBedge ? Color.white : Color.black)
+                            })
+                            .padding()
+                            .frame(width: 40, height: 30, alignment: .center)
+                            .background(mailBedge ? Color.red : Color.gray)
+                            .clipShape(RoundedRectangle(cornerRadius: 40))
+                        }
+                        .offset(x: -85, y:-100)
+                        
+                        HStack {
+                            Button(action: {
+                                withAnimation(.easeIn) {
+                                    musicBedge = false
+                                    if n < 3 {
+                                        n += 1
                                     }
-                                }, label: {
-                                    Text("!").bold()
-                                        .fontWeight(.semibold)
-                                        .font(.system(size: 15))
-                                        .frame(width: 25, height: 25, alignment: .center)
-                                        .foregroundColor(musicBedge ? Color.white : Color.black)
-                                })
-                                .padding()
-                                .frame(width: 25, height: 25, alignment: .center)
-                                .background(musicBedge ? Color.red : Color.gray)
-                                .clipShape(RoundedRectangle(cornerRadius: 40))
-                            }
-                            .offset(x: 125, y: 300)
-                            
-                            HStack {
-                                Button(action: {
-                                    withAnimation(.easeIn) {
-                                        disBedge = false
-                                        if n < 3 {
-                                            n += 1
-                                        }
+                                }
+                            }, label: {
+                                Text("!").bold()
+                                    .fontWeight(.semibold)
+                                    .font(.system(size: 15))
+                                    .frame(width: 25, height: 25, alignment: .center)
+                                    .foregroundColor(musicBedge ? Color.white : Color.black)
+                            })
+                            .padding()
+                            .frame(width: 25, height: 25, alignment: .center)
+                            .background(musicBedge ? Color.red : Color.gray)
+                            .clipShape(RoundedRectangle(cornerRadius: 40))
+                        }
+                        .offset(x: 125, y: 300)
+                        
+                        HStack {
+                            Button(action: {
+                                withAnimation(.easeIn) {
+                                    disBedge = false
+                                    if n < 3 {
+                                        n += 1
                                     }
-                                }, label: {
-                                    Text("!").bold()
-                                        .fontWeight(.semibold)
-                                        .font(.system(size: 15))
-                                        .frame(width: 35, height: 35, alignment: .center)
-                                        .foregroundColor(disBedge ? Color.white : Color.black)
-                                })
-                                .padding()
-                                .frame(width: 25, height: 25, alignment: .center)
-                                .background(disBedge ? Color.red : Color.gray)
-                                .clipShape(RoundedRectangle(cornerRadius: 40))
-                            }
-                            .offset(x: 125, y: -100)
+                                }
+                            }, label: {
+                                Text("!").bold()
+                                    .fontWeight(.semibold)
+                                    .font(.system(size: 15))
+                                    .frame(width: 35, height: 35, alignment: .center)
+                                    .foregroundColor(disBedge ? Color.white : Color.black)
+                            })
+                            .padding()
+                            .frame(width: 25, height: 25, alignment: .center)
+                            .background(disBedge ? Color.red : Color.gray)
+                            .clipShape(RoundedRectangle(cornerRadius: 40))
+                        }
+                        .offset(x: 125, y: -100)
                     }
-                    
-                    NavigationLink(destination: mailView()) {
+                    .navigationBarHidden(true)
+                    if n < 3 {
                         Text("Next Step 👉🏻")
                             .font(.system(size: 30))
                             .frame(width: 320, height: 70, alignment: .center)
-                            .background(Color.green)
+                            .background(Color.black.opacity(0.3))
                             .foregroundColor(Color.white)
                             .cornerRadius(30)
+                            .onTapGesture {
+                                self.alertActive = true
+                            }
+                            .alert(isPresented: self.$alertActive){
+                                Alert(title: Text(""), message: Text("The game isn't over.\nYou need to find \(3-n) answers more."), dismissButton: .default(Text("OK")))}
+                    } else {
+                        NavigationLink(destination: mailView()) {
+                            Text("Next Step 👉🏻")
+                                .font(.system(size: 30))
+                                .frame(width: 320, height: 70, alignment: .center)
+                                .background(Color.blue)
+                                .foregroundColor(Color.white)
+                                .cornerRadius(30)
+                        }
+                        .navigationBarHidden(true)
                     }
-                    .navigationBarHidden(true)
+                    
+                    
                 }
                 
                 ZStack {
