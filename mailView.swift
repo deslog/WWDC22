@@ -1,10 +1,3 @@
-//
-//  mailView.swift
-//  CO2-FootPrint
-//
-//  Created by 이지수 on 2022/04/21.
-//
-
 import SwiftUI
 
 struct mailView: View {
@@ -27,7 +20,7 @@ struct mailView: View {
             VStack {
                 ZStack {
                     VStack {
-                        Text("Find hidden CO2!🐨 (\(n)/3)")
+                        Text("Find hidden CO2!🐼 (\(n)/3)")
                             .bold()
                             .font(.system(size: 30))
                         
@@ -170,7 +163,7 @@ struct mailView: View {
                 .offset(x: 580, y: -250)
                 
                 ChatBubble(direction: .left) {
-                    Text("Skip the simple greetings! For every single email you send, 4g of CO2 is produced. 🌍")
+                    Text("Reduce the simple greetings! For every single email you send, 4g of CO2 is produced. 🌍")
                         .font(.system(size: 20))
                         .padding(.all, 20)
                         .foregroundColor(Color.white)

@@ -1,10 +1,3 @@
-//
-//  congratsView.swift
-//  CO2-FootPrint
-//
-//  Created by 이지수 on 2022/04/22.
-//
-
 import SwiftUI
 
 struct congratsView: View {
@@ -25,11 +18,11 @@ struct congratsView: View {
                 
                 VStack {
                     
-                    Text("Thak you!")
+                    Text("You save the EARTH 🌍❤️")
                         .bold()
                         .font(.system(size: 40))
                     
-                    Text(" Because of you, the earth will be healthy.\nFrom now on, let's work slowly and practice small things!\n ")
+                    Text(" Thanks to you, the earth will be healthy.\nFrom now on, let's work slowly and practice small things!\n ")
                         .multilineTextAlignment(.center)
                         .font(.custom("Diwan Thuluth Regular", size: 25))
                         .padding(EdgeInsets(top: 30, leading: 20, bottom: 10, trailing: 20))
