@@ -11,6 +11,10 @@ struct homeView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                Image("mainBackground")
+                    .resizable()
+                    .ignoresSafeArea()
+                
                 VStack {
                     ZStack {
                         VStack {
@@ -27,10 +31,10 @@ struct homeView: View {
                         HStack {
                             Button(action: {
                                 withAnimation(.easeIn) {
-                                    mailBedge = false
-                                    if n < 3 {
+                                    if n < 3 && mailBedge == true {
                                         n += 1
                                     }
+                                    mailBedge = false
                                 }
                             }, label: {
                                 Text("999").bold()
@@ -49,10 +53,10 @@ struct homeView: View {
                         HStack {
                             Button(action: {
                                 withAnimation(.easeIn) {
-                                    musicBedge = false
-                                    if n < 3 {
+                                    if n < 3 && musicBedge == true {
                                         n += 1
                                     }
+                                    musicBedge = false
                                 }
                             }, label: {
                                 Text("!").bold()
@@ -71,10 +75,10 @@ struct homeView: View {
                         HStack {
                             Button(action: {
                                 withAnimation(.easeIn) {
-                                    disBedge = false
-                                    if n < 3 {
+                                    if n < 3 && disBedge == true {
                                         n += 1
                                     }
+                                    disBedge = false
                                 }
                             }, label: {
                                 Text("!").bold()
@@ -108,7 +112,7 @@ struct homeView: View {
                             Text("Next Step 👉🏻")
                                 .font(.system(size: 30))
                                 .frame(width: 320, height: 70, alignment: .center)
-                                .background(Color.blue)
+                                .background(Color.black)
                                 .foregroundColor(Color.white)
                                 .cornerRadius(30)
                         }

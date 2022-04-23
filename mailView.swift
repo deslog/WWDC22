@@ -19,8 +19,11 @@ struct mailView: View {
     let screenHeight = 844
     
     var body: some View {
-        
         ZStack {
+            Image("mainBackground")
+                .resizable()
+                .ignoresSafeArea()
+            
             VStack {
                 ZStack {
                     VStack {
@@ -36,10 +39,10 @@ struct mailView: View {
                     HStack {
                         Button(action: {
                             withAnimation(.easeIn) {
-                                inbox = false
-                                if n < 3{
+                                if n < 3 && inbox == true {
                                     n += 1
                                 }
+                                inbox = false
                             }
                         }, label: {
                             Text("999").bold()
@@ -112,10 +115,10 @@ struct mailView: View {
                     HStack {
                         Button(action: {
                             withAnimation(.easeIn) {
-                                writemail = false
-                                if n < 3{
+                                if n < 3 && writemail == true {
                                     n += 1
                                 }
+                                writemail = false
                             }
                         }, label: {
                             Image(systemName: "square.and.pencil")
@@ -145,7 +148,7 @@ struct mailView: View {
                         Text("Next Step 👉🏻")
                             .font(.system(size: 30))
                             .frame(width: 320, height: 70, alignment: .center)
-                            .background(Color.blue)
+                            .background(Color.black)
                             .foregroundColor(Color.white)
                             .cornerRadius(30)
                     }
