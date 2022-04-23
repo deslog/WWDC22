@@ -9,7 +9,9 @@ import SwiftUI
 
 
 struct mainView: View {
-    
+    @State var firstNaviLinkActive: Bool = false
+
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -42,7 +44,7 @@ struct mainView: View {
                                 .navigationBarHidden(true)
                                 .padding(10)
                                 
-                                NavigationLink(destination: homeView()) {
+                                NavigationLink(destination: homeView(firstNaviLinkActive: $firstNaviLinkActive), isActive: $firstNaviLinkActive) {
                                     Text("Game Start 🎉")
                                         .font(.system(size: 30))
                                         .frame(width: 320, height: 70, alignment: .center)

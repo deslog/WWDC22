@@ -6,6 +6,7 @@ struct homeView: View {
     @State var musicBedge = true
     @State var n = 0
     @State private var alertActive = false
+    @Binding var firstNaviLinkActive: Bool
     
     var body: some View {
         NavigationView {
@@ -103,7 +104,7 @@ struct homeView: View {
                             .alert(isPresented: self.$alertActive){
                                 Alert(title: Text(""), message: Text("The game isn't over.\nYou need to find \(3-n) answers more."), dismissButton: .default(Text("OK")))}
                     } else {
-                        NavigationLink(destination: mailView()) {
+                        NavigationLink(destination: mailView(firstNaviLinkActive: $firstNaviLinkActive)) {
                             Text("Next Step 👉🏻")
                                 .font(.system(size: 30))
                                 .frame(width: 320, height: 70, alignment: .center)
@@ -160,6 +161,6 @@ struct homeView: View {
 
 struct homeView_Previews: PreviewProvider {
     static var previews: some View {
-        homeView()
+        homeView(firstNaviLinkActive: .constant(true))
     }
 }

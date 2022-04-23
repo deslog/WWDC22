@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct instaView: View {
+    @Binding var firstNaviLinkActive: Bool
+    
     var body: some View {
         VStack {
             Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
                 .font(.system(size: 40))
             
-            NavigationLink(destination: safariView()) {
+            NavigationLink(destination: congratsView(firstNaviLinkActive: $firstNaviLinkActive)) {
                 Text("Go to Last Step 🥳")
                     .font(.system(size: 30))
                     .frame(width: 320, height: 70, alignment: .center)
@@ -29,6 +31,6 @@ struct instaView: View {
 
 struct instaView_Previews: PreviewProvider {
     static var previews: some View {
-        instaView()
+        instaView(firstNaviLinkActive: .constant(true))
     }
 }

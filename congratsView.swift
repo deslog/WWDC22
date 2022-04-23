@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct congratsView: View {
+    @Binding var firstNaviLinkActive: Bool
+
     var body: some View {
         VStack {
             Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
@@ -20,6 +22,9 @@ struct congratsView: View {
                     .background(Color.gray)
                     .foregroundColor(Color.white)
                     .cornerRadius(30)
+                    .onTapGesture {
+                        firstNaviLinkActive = false
+                    }
             }
             .navigationBarHidden(true)
         }
@@ -28,6 +33,6 @@ struct congratsView: View {
 
 struct congratsView_Previews: PreviewProvider {
     static var previews: some View {
-        congratsView()
+        congratsView(firstNaviLinkActive: .constant(true))
     }
 }
