@@ -13,7 +13,7 @@ struct ClappingHandsEmojiView: View {
             ZStack {
                 Image("head")
                     .resizable()
-                    .frame(width: 600, height: 500)
+                    .frame(width: 640, height: 500)
                 
                 VStack {
                     ZStack {
@@ -33,10 +33,9 @@ struct ClappingHandsEmojiView: View {
                         Image("mouth")
                         // 2. Mouth Opening Animation
                             .resizable()
-                            .frame(width: 100, height: 40)
+                            .frame(width: 120, height: 40)
                             .scaleEffect(x: openingClosing ? 0.7 : 1)
-                            .animation(.timingCurve(0.68, -0.6, 0.32, 1.6).delay(1).repeatForever(autoreverses: true), value: openingClosing)
-                            .offset(x: 10, y: 90)
+                            .offset(x: 7, y: 85)
                         
                         
                         HStack {
