@@ -36,7 +36,7 @@ struct whyCarbonView: View {
                         .background(Color.green.opacity(0.7))
                         .foregroundColor(Color.white)
                     
-                    Text("🌊 Sea level rise.\n🌎 Natural disasters and abnormal climates.\n💦 Water scarcity problem due to disappearing glaciers.\n🌳 Destruction of the ozone layer and deepening of air pollution.\n🐻‍❄️ Ecosystem destructio: polar bears and penguins will become extinct.\n\nWith the onset of industrialization, the Earth's temperature has risen by 1.4 degrees over the past 30 years. If the temperature rises by more than 2 degrees Celsius, natural disasters beyond human reach will strike, and we may no longer be able to live on Earth. We must save the planet before that.\n")
+                    Text("🌊 Sea level rise.\n🌎 Natural disasters and abnormal climates.\n💦 Water scarcity problem due to disappearing glaciers.\n🌳 Destruction of the ozone layer and deepening of air pollution.\n🐻‍❄️ Ecosystem destruction: polar bears and penguins will become extinct.\n\nWith the onset of industrialization, the Earth's temperature has risen by 1.4 degrees over the past 30 years. If the temperature rises by more than 2 degrees Celsius, natural disasters beyond human reach will strike, and we may no longer be able to live on Earth. We must save the planet before that.\n")
                         .multilineTextAlignment(.leading)
                         .font(.custom("Diwan Thuluth Regular", size: 22))
                         .padding(EdgeInsets(top: 30, leading: 20, bottom: 10, trailing: 20))

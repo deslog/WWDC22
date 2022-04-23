@@ -48,7 +48,7 @@ struct instaView: View {
                                 usePlastic = false
                             }
                         
-                        Image("instaComputer")
+                        Image("computer")
                             .resizable()
                             .frame(width: 225, height: 243)
                             .colorMultiply(useComputer ? Color.clear : Color.red)
