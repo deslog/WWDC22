@@ -10,26 +10,38 @@ import SwiftUI
 
 struct mainView: View {
     @State var firstNaviLinkActive: Bool = false
-
-
+    
+    
     var body: some View {
         NavigationView {
-            ZStack {
+            ZStack{
+                Image("mainBackground")
+                    .resizable()
+                    .ignoresSafeArea(.all)
+                
+                ZStack {
                     VStack {
                         Text("📱DIGITAL DIET🌳")
                             .bold()
-                            .font(.system(size: 50))
+                            .font(.system(size: 55))
                             .padding(10)
-                        Text("Downsize your Digital Footprint.")
+                        Text(" Downsize your Digital Footprint ")
                             .bold()
-                            .font(.system(size: 30))
+                            .font(.system(size: 35))
+                            .background(Color.green.opacity(0.6))
                         
                         
-                        Text("Safe to say, we spend a lot of time looking at our phones and computers - both at work and at home. \n\nBut did you know that our digital habits are also hitting the health of the planet hard? \n\nPowering the internet and storing all our data ‘somewhere up there in the cloud’ takes energy. A lot of energy. In fact, the IT industry is one of the fastest growing sources of carbon emissions. \n\nFor the sake of the Earth and our continuous lives, we should try to reduce the carbon generated when we use digital.\n\nSo from now on, we're going to learn how to reduce digital footprints.\n\n")
+                        Text("Safe to say, we spend a lot of time looking at our phones. \nBut did you know that our digital habits are destroying the environment?\n\nPowering the internet and storing all our data ‘somewhere up there in the cloud’ takes a lot of energy. The CO2 generated in this way is called 'DIGITAL FOOTPRINT'. \n\nFor the sake of the Earth and our continuous lives, we should try to reduce the CO2 when we use digital. So from now on, we're going to learn how to reduce digital footprints.\n")
+                            .multilineTextAlignment(.center)
                             .font(.custom("Diwan Thuluth Regular", size: 25))
                             .padding(EdgeInsets(top: 30, leading: 20, bottom: 10, trailing: 20))
-                        Text("Let's Go on a Digital Diet!")
+                            .foregroundColor(Color.white)
+                            .background(RoundedRectangle(cornerRadius: 30).fill(Color.black.opacity(0.5)))
+
+                        Text(" Let's Go on a Digital Diet! \t")
                             .font(.title).bold()
+                            .foregroundColor(Color.black)
+                            .background(Color.green.opacity(0.6))
                         
                         VStack {
                             HStack {
@@ -37,7 +49,7 @@ struct mainView: View {
                                     Text("How To Game🧐")
                                         .font(.system(size: 30))
                                         .frame(width: 320, height: 70, alignment: .center)
-                                        .background(Color.green)
+                                        .background(Color.black)
                                         .foregroundColor(Color.white)
                                         .cornerRadius(30)
                                 }
@@ -48,7 +60,7 @@ struct mainView: View {
                                     Text("Game Start 🎉")
                                         .font(.system(size: 30))
                                         .frame(width: 320, height: 70, alignment: .center)
-                                        .background(Color.green)
+                                        .background(Color.black)
                                         .foregroundColor(Color.white)
                                         .cornerRadius(30)
                                 }
@@ -58,10 +70,10 @@ struct mainView: View {
                             }
                             NavigationLink(destination: whyCarbonView()) {
                                 Text("Why should we practice Net-Zero?")
-                                    .font(.system(size: 30))
-                                    .underline()
-                                    .frame(width: 480, height: 70, alignment: .center)
-                                    .foregroundColor(Color.blue)
+                                    .font(.system(size: 20))
+                                    .frame(width: 380, height: 45, alignment: .center)
+                                    .foregroundColor(Color.white)
+                                    .background(Color.black.opacity(0.6))
                                     .cornerRadius(30)
                             }
                             .navigationBarHidden(true)
@@ -70,7 +82,9 @@ struct mainView: View {
                     }
                     
                 }
-            .padding(EdgeInsets(top: 50, leading: 20, bottom: 50, trailing: 30))
+                .padding(EdgeInsets(top: 50, leading: 20, bottom: 50, trailing: 30))
+            }
+            
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
