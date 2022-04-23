@@ -12,6 +12,7 @@ struct mailView: View {
     @State var junkAndTrash = true
     @State var writemail = true
     @State var n = 0
+    @State private var alertActive = false
     
     let screenWidth = 390
     let screenHeight = 844
@@ -125,16 +126,30 @@ struct mailView: View {
                     }
                     .offset(x: 120, y:330)
                 }
-                
-                NavigationLink(destination: instaView()) {
+                .navigationBarHidden(true)
+                if n < 3 {
                     Text("Next Step 👉🏻")
                         .font(.system(size: 30))
                         .frame(width: 320, height: 70, alignment: .center)
-                        .background(Color.green)
+                        .background(Color.black.opacity(0.3))
                         .foregroundColor(Color.white)
                         .cornerRadius(30)
+                        .onTapGesture {
+                            self.alertActive = true
+                        }
+                        .alert(isPresented: self.$alertActive){
+                            Alert(title: Text(""), message: Text("The game isn't over.\nYou need to find \(3-n) answers more."), dismissButton: .default(Text("OK")))}
+                } else {
+                    NavigationLink(destination: mailView()) {
+                        Text("Next Step 👉🏻")
+                            .font(.system(size: 30))
+                            .frame(width: 320, height: 70, alignment: .center)
+                            .background(Color.blue)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(30)
+                    }
+                    .navigationBarHidden(true)
                 }
-                .navigationBarHidden(true)
                 
             }
             
