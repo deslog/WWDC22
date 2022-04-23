@@ -109,36 +109,3 @@ struct ChatBubbleShape: Shape {
         return path
     }
 }
-
-struct Demo: View {
-    var body: some View {
-        ScrollView {
-            VStack {
-                ChatBubble(direction: .left) {
-                    Text("Hello!")
-                        .padding(.all, 20)
-                        .foregroundColor(Color.white)
-                        .background(Color.blue)
-                }
-                ChatBubble(direction: .right) {
-                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut semper quam. Phasellus non mauris sem. Donec sed fermentum eros. Donec pretium nec turpis a semper. ")
-                        .padding(.all, 20)
-                        .foregroundColor(Color.white)
-                        .background(Color.blue)
-                }
-                ChatBubble(direction: .right) {
-                    Image.init("leftBubble")
-                        .resizable()
-                        .frame(width: UIScreen.main.bounds.width - 70,
-                               height: 200).aspectRatio(contentMode: .fill)
-                }
-            }
-        }
-    }
-}
-
-struct ChatBubble_Previews: PreviewProvider {
-    static var previews: some View {
-        Demo()
-    }
-}

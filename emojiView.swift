@@ -20,7 +20,6 @@ struct ClappingHandsEmojiView: View {
                         Image("eyelid")
                         
                         Image("eye_blink")
-                        // 1. Eye Blink Animation
                             .resizable()
                             .frame(width: 200, height: 40)
                             .scaleEffect(y: blinking ? 0 : 1)
@@ -31,7 +30,6 @@ struct ClappingHandsEmojiView: View {
                     
                     ZStack {
                         Image("mouth")
-                        // 2. Mouth Opening Animation
                             .resizable()
                             .frame(width: 120, height: 40)
                             .scaleEffect(x: openingClosing ? 0.7 : 1)
@@ -40,13 +38,11 @@ struct ClappingHandsEmojiView: View {
                         
                         HStack {
                             Image("left_hand")
-                            // 3. Clapping Animation: Left Hand
                                 .rotationEffect(.degrees(clapping ? 15 : -5), anchor: .bottom)
                                 .offset(x: clapping ? 20 : -40)
                                 .animation(.easeInOut(duration: 0.2).repeatForever(autoreverses: true), value: clapping)
                             
                             Image("right_hand")
-                            // 4. Clapping Animation: Right Hand
                                 .rotationEffect(.degrees(clapping ? -15 : 5), anchor: .bottom)
                                 .offset(x: clapping ? -20 : 40)
                                 .animation(.easeInOut(duration: 0.2).repeatForever(autoreverses: true), value: clapping)
@@ -57,7 +53,6 @@ struct ClappingHandsEmojiView: View {
                     
                 }
                 .onAppear{
-                    // Final Animation States
                     clapping.toggle()
                     blinking.toggle()
                     openingClosing.toggle()
