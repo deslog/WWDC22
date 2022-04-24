@@ -23,7 +23,7 @@ struct mainView: View {
                     VStack {
                         Text("📱DIGITAL DIET🌳")
                             .bold()
-                            .font(.custom("Noteworthy Bold", size: 55))
+                            .font(.system(size: 55))
                             .padding(10)
                         Text(" Downsize your Digital Footprint ")
                             .bold()

@@ -20,7 +20,7 @@ struct GifImage: UIViewRepresentable{
             characterEncodingName: "UTF-8",
             baseURL: url.deletingLastPathComponent()
         )
-        webView.scrollView.isScrollEnabled = false // 스크롤 막음. 기능
+        webView.scrollView.isScrollEnabled = false
         return webView
     }
     func updateUIView(_ uiView: WKWebView, context:Context){
