@@ -58,10 +58,3 @@ struct fireworksEffectView: View {
         }
     }
 }
-
-
-struct fireworksEffectView_Previews: PreviewProvider {
-    static var previews: some View {
-        fireworksEffectView()
-    }
-}

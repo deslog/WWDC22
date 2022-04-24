@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct ClappingHandsEmojiView: View {
-    
-    // Initial Animation States
+
     @State private var blinking = false
     @State private var openingClosing = true
     @State private var clapping = true
@@ -65,10 +64,4 @@ struct ClappingHandsEmojiView: View {
         
     }
     
-}
-
-struct ClappingHandsEmojiView_Previews: PreviewProvider {
-    static var previews: some View {
-        ClappingHandsEmojiView()
-    }
 }

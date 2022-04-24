@@ -153,7 +153,7 @@ struct mailView: View {
                                 Alert(title: Text(""), message: Text("The game isn't over.\nYou need to find \(3-n) answers more."), dismissButton: .default(Text("OK")))}
                     } else {
                         NavigationLink(destination: instaView(firstNaviLinkActive: $firstNaviLinkActive)) {
-                            Text("Next Step 👉🏻")
+                            Text("Next Step 👉")
                                 .font(.system(size: 30))
                                 .frame(width: 320, height: 70, alignment: .center)
                                 .background(Color.black)
@@ -167,7 +167,7 @@ struct mailView: View {
             
             ZStack {
                 ChatBubble(direction: .left) {
-                    Text("Delete emails you have already read! A huge amount of electricity is consumed to run a email data center.📨")
+                    Text("Delete emails you have already read! A huge amount of electricity is consumed to run a email data center.")
                         .font(.system(size: 20))
                     
                         .padding(.all, 20)
@@ -178,7 +178,7 @@ struct mailView: View {
                 .offset(x: 580, y: -250)
                 
                 ChatBubble(direction: .left) {
-                    Text("Reduce the simple greetings! For every single email you send, 4g of CO2 is produced. 🌍")
+                    Text("Reduce the simple greetings! For every single email you send, 4g of CO2 is produced.")
                         .font(.system(size: 20))
                         .padding(.all, 20)
                         .foregroundColor(Color.white)
@@ -188,7 +188,7 @@ struct mailView: View {
                 .offset(x: 580, y: 180)
                 
                 ChatBubble(direction: .right) {
-                    Text("Please completely delete unnecessary junk and trash mail! Emptying 1GB of mailbox can reduce 14.9kg of CO2. 🚗")
+                    Text("Please completely delete unnecessary junk and trash mail! Emptying 1GB of mailbox can reduce 14.9kg of CO2.")
                         .font(.system(size: 20))
                         .padding(.all, 20)
                         .foregroundColor(Color.white)
@@ -199,11 +199,5 @@ struct mailView: View {
             }
         }
         
-    }
-}
-
-struct mailView_Previews: PreviewProvider {
-    static var previews: some View {
-        mailView(firstNaviLinkActive: .constant(true))
     }
 }

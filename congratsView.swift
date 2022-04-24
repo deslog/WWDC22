@@ -47,9 +47,3 @@ struct congratsView: View {
         
     }
 }
-
-struct congratsView_Previews: PreviewProvider {
-    static var previews: some View {
-        congratsView(firstNaviLinkActive: .constant(true))
-    }
-}

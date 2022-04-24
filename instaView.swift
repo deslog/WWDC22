@@ -105,7 +105,7 @@ struct instaView: View {
             
             ZStack {
                 ChatBubble(direction: .right) {
-                    Text("Use less plastic! (Please use a tumbler) At least 10% of the climate crisis is due to consumption of plastics.🥤")
+                    Text("Use less plastic! (Please use a tumbler) At least 10% of the climate crisis is due to consumption of plastics.")
                         .font(.system(size: 20))
                     
                         .padding(.all, 20)
@@ -116,7 +116,7 @@ struct instaView: View {
                 .offset(x: -580, y: -150)
                 
                 ChatBubble(direction: .left) {
-                    Text("Use power saving mode! By lowering the monitor brightness to 70%, you can save 20% of the energy used.💻")
+                    Text("Use power saving mode! By lowering the monitor brightness to 70%, you can save 20% of the energy used.")
                         .font(.system(size: 20))
                         .padding(.all, 20)
                         .foregroundColor(Color.white)
@@ -127,11 +127,5 @@ struct instaView: View {
             }
         }
         
-    }
-}
-
-struct instaView_Previews: PreviewProvider {
-    static var previews: some View {
-        instaView(firstNaviLinkActive: .constant(true))
     }
 }

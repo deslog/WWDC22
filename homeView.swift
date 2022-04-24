@@ -139,7 +139,7 @@ struct homeView: View {
                 
                 ZStack {
                     ChatBubble(direction: .left) {
-                        Text("Use only the subscription services you absolutely need! Streaming video emits 1g of CO2 per 10 minutes, and data emits 11g of CO2 per 1MB of data. 📺")
+                        Text("Use only the subscription services you absolutely need! Streaming video emits 1g of CO2 per 10 minutes, and data emits 11g of CO2 per 1MB of data.")
                             .font(.system(size: 20))
                         
                             .padding(.all, 20)
@@ -150,7 +150,7 @@ struct homeView: View {
                     .offset(x: 580, y: -200)
                     
                     ChatBubble(direction: .left) {
-                        Text("Don't streaming, download the soundtrack! Streaming services emit more CO2 with constant data usage.🎶")
+                        Text("Don't streaming, download the soundtrack! Streaming services emit more CO2 with constant data usage.")
                             .font(.system(size: 20))
                             .padding(.all, 20)
                             .foregroundColor(Color.white)
@@ -160,7 +160,7 @@ struct homeView: View {
                     .offset(x: 580, y: 100)
                     
                     ChatBubble(direction: .right) {
-                        Text("Please empty your mailbox! A lot of CO2 is generated in the space that stores mail.📫")
+                        Text("Please empty your mailbox! A lot of CO2 is generated in the space that stores mail.")
                             .font(.system(size: 20))
                             .padding(.all, 20)
                             .foregroundColor(Color.white)
@@ -176,11 +176,5 @@ struct homeView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButton(presentationMode: _presentationMode, foregroundColor: Color.blue))
         .navigationViewStyle(StackNavigationViewStyle())
-    }
-}
-
-struct homeView_Previews: PreviewProvider {
-    static var previews: some View {
-        homeView(firstNaviLinkActive: .constant(true))
     }
 }
