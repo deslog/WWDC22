@@ -24,7 +24,7 @@ struct homeView: View {
                                 .bold()
                                 .font(.system(size: 30))
                             
-                            Image("homeView")
+                            Image("Image_home")
                                 .resizable()
                                 .frame(width: 342, height: 740)
                         }

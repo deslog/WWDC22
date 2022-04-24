@@ -25,7 +25,7 @@ struct mailView: View {
                             .bold()
                             .font(.system(size: 30))
                         
-                        Image("mailView")
+                        Image("Image_mail")
                             .resizable()
                             .frame(width: 342, height: 740)
                     }

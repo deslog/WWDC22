@@ -30,7 +30,7 @@ struct instaView: View {
                             .bold()
                             .font(.system(size: 30))
                         
-                        Image("instaView")
+                        Image("Image_insta")
                             .resizable()
                             .frame(width: 342, height: 740)
                     }
