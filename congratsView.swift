@@ -30,7 +30,7 @@ struct congratsView: View {
                         .background(RoundedRectangle(cornerRadius: 30).fill(Color.black.opacity(0.5)))
                         .padding(.all, 20)
                     NavigationLink(destination: mainView()) {
-                        Text("Go to main")
+                        Text("Go to home")
                             .font(.system(size: 30))
                             .frame(width: 320, height: 70, alignment: .center)
                             .background(Color.black)
