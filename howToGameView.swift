@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct howToGameView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
             
@@ -36,7 +38,10 @@ struct howToGameView: View {
                 
             }
             
+            
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: BackButton(presentationMode: _presentationMode, foregroundColor: Color.blue))
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }

@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct whyCarbonView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         ZStack {
             Image("whyCarbonViewBackground")
@@ -50,6 +52,10 @@ struct whyCarbonView: View {
                 
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: BackButton(presentationMode: _presentationMode, foregroundColor: Color.blue))
+        .navigationViewStyle(StackNavigationViewStyle())
+        
     }
 }
 
