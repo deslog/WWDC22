@@ -23,7 +23,7 @@ struct mainView: View {
                     VStack {
                         Text("📱DIGITAL DIET🌳")
                             .bold()
-                            .font(.system(size: 55))
+                            .font(.custom("Noteworthy Bold", size: 55))
                             .padding(10)
                         Text(" Downsize your Digital Footprint ")
                             .bold()
@@ -33,7 +33,7 @@ struct mainView: View {
                         
                         Text("Safe to say, we spend a lot of time looking at our phones. \nBut did you know that our digital habits are destroying the environment?\n\nPowering the internet and storing all our data ‘somewhere up there in the cloud’ takes a lot of energy. The CO2 generated in this way is called 'DIGITAL FOOTPRINT'. \n\nFor the sake of the Earth and our continuous lives, we should try to reduce the CO2 when we use digital. So from now on, we're going to learn how to reduce digital footprints.\n")
                             .multilineTextAlignment(.center)
-                            .font(.custom("Diwan Thuluth Regular", size: 25))
+                            .font(.system(size: 25))
                             .padding(EdgeInsets(top: 30, leading: 20, bottom: 10, trailing: 20))
                             .foregroundColor(Color.white)
                             .background(RoundedRectangle(cornerRadius: 30).fill(Color.black.opacity(0.5)))
@@ -46,7 +46,7 @@ struct mainView: View {
                         VStack {
                             HStack {
                                 NavigationLink(destination: howToGameView()) {
-                                    Text("How To Game🧐")
+                                    Text("How To Play🧐")
                                         .font(.system(size: 30))
                                         .frame(width: 320, height: 70, alignment: .center)
                                         .background(Color.black)

@@ -127,7 +127,7 @@ struct mailView: View {
                 .navigationBarHidden(true)
                 
                 HStack {
-                    Text("HINT🔎")
+                    Text("Hint🔎")
                         .font(.system(size: 30))
                         .frame(width: 320, height: 70, alignment: .center)
                         .background(Color.white.opacity(0.3))
@@ -140,8 +140,8 @@ struct mailView: View {
                             Alert(title: Text("Hint"), message: Text("Focus on the numbers. There are too many emails piled up in the mailbox. And even when you write an email, CO2 is generated too!"), dismissButton: .default(Text("OK")))}
                     
                     if n < 3 {
-                        Text("Next Step 👉🏻")
-                            .font(.system(size: 30))
+                        Text("Next Step 👉")
+                            .font(.custom("Gilroy-Medium.ttf", size: 30))
                             .frame(width: 320, height: 70, alignment: .center)
                             .background(Color.black.opacity(0.3))
                             .foregroundColor(Color.white)

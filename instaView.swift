@@ -111,8 +111,7 @@ struct instaView: View {
                         .padding(.all, 20)
                         .foregroundColor(Color.white)
                         .background(Color.green)
-                        .frame(width: 210)
-                    //                        .frame(width: usePlastic ? 0 : 210)
+                        .frame(width: usePlastic ? 0 : 210)
                 }
                 .offset(x: -580, y: -150)
                 
@@ -122,8 +121,7 @@ struct instaView: View {
                         .padding(.all, 20)
                         .foregroundColor(Color.white)
                         .background(Color.green)
-                        .frame(width: 210)
-                    //                        .frame(width: useComputer ? 0 : 210)
+                        .frame(width: useComputer ? 0 : 210)
                 }
                 .offset(x: 580, y: 100)
             }

@@ -98,7 +98,7 @@ struct homeView: View {
                     .navigationBarHidden(true)
                     
                     HStack{
-                        Text("HINT🔎")
+                        Text("Hint🔎")
                             .font(.system(size: 30))
                             .frame(width: 320, height: 70, alignment: .center)
                             .background(Color.white.opacity(0.3))
@@ -111,7 +111,7 @@ struct homeView: View {
                                 Alert(title: Text("Hint"), message: Text("Look at the 3 red badges!"), dismissButton: .default(Text("OK")))}
                         
                         if n < 3 {
-                            Text("Next Step 👉🏻")
+                            Text("Next Step 👉")
                                 .font(.system(size: 30))
                                 .frame(width: 320, height: 70, alignment: .center)
                                 .background(Color.black.opacity(0.3))
