@@ -9,9 +9,9 @@ struct howToGameView: View {
             VStack {
                 ZStack {
 
-                    GifImage("howToGame-min")
-                        .frame(width: 500, height: 500)
-                        .offset(x: -20, y: -50)
+//                    GifImage("howToGame-min")
+//                        .frame(width: 500, height: 500)
+//                        .offset(x: -20, y: -50)
                     
                     Text("Find Hidden CO2! (0/2)")
                         .bold()
